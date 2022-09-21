@@ -72,6 +72,7 @@
     position: fixed;
     top: 32px;
     right: 32px;
+    z-index: 99999;
 }
 
 

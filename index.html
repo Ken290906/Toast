@@ -29,12 +29,15 @@
             const main = document.getElementById('toast');
             if (main) {
                 const toast = document.createElement('div');
-                
+
                 // Auto remove toast
-                
-                // Remove toast when click
+                const autoRemoveId = setTimeout(function() {
+                    main.removeChild(toast);
+                }, duration + 1000);
+
+                // Remove toast when clicked
                 toast.onclick = function(e) {
-                    if (e.target.closet('.toast__close')) {
+                    if  (e.target.closest('.toast__close')) {
                         main.removeChild(toast);
                         clearTimeout(autoRemoveId);
                     }
@@ -64,10 +67,6 @@
                 </div>
                 `;
                 main.appendChild(toast);
-                
-                const autoRemoveId = setTimeout(function() {
-                    main.removeChild(toast);
-                }, duration + 1000);
             }
                
         }
